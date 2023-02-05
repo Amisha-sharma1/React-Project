@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "email": "poonam23@gmail.com",
+      "name": "poonam",
+      "age": "23",
+      "gender": "Male",
+      "dob": "12/04/1998",
+      "description": "hlo",
+      "hobbies": [
+        "writing",
+        "reading",
+        "upcoming"
+      ],
+      "id": 1
+    }
+  ],
+  "userslogin": [
+    {
+      "id": 1,
+      "email": "neha12@gmail.com",
+      "password": "123abcd"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "nitika56@gmail.com",
+      "password": "1234ert",
+      "id": 3
+    },
+    {
+      "email": "nitika56@gmail.com",
+      "password": "1234ert",
+      "id": 4
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "name": "amisha",
+      "id": 5
+    }
+  ]
+}
