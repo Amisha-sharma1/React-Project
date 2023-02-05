@@ -75,7 +75,7 @@ const UserTableRow = (props: propTypes) => {
                     </Box>
                     <Box className="btn-wrapper">
                       <Button onClick={handleDelete} className="yes-btn" colorScheme="blue">yes</Button>
-                      <Button>no</Button>
+                      <Button onClick={closeModal}>no</Button>
                     </Box>
                   </Box>
                 </Popup>
