@@ -9,15 +9,18 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function UserHobbies() {
-  const { hobby } = useSelector((state: RootState) => ({
+  const { hobby, currUser } = useSelector((state: RootState) => ({
     hobby: state.users.hobby,
+    currUser: state.users.users
   }));
-  const defaultvalue = {
-    checkbox: "",
-  };
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const current = currUser.find((item) => item.id == id)
+  if (current == null) return null
+  const defaultvalue = {
+    hobby: hobby ? hobby : current.hobbies,
+  };
   const validationSchema = yup.object().shape({
     checkbox: yup.boolean().oneOf([true], "choose any five items"),
   });
@@ -30,32 +33,50 @@ export default function UserHobbies() {
   };
 
   return (
-    <Box className="add-form-wrapper">
-      <Link to={`/dashboard/edit/${id}`}> Back to Edit </Link>
+    <Box className="add-hobby-form">
+      <Link to={`/dashboard/edit/${id}`} className="back-edit-btn"> Back to Edit </Link>
       <Formik
         initialValues={defaultvalue}
         validationSchema={validationSchema}
         onSubmit={submit}
       >
         <Form>
-          <Text> Select Hobbies</Text>
-          <Box className="mb-3">
-            <label>writing</label>
-            <Field type="checkbox" name="hobby" value="writing"></Field>
-          </Box>
-          <Box>
-            <label>Reading</label>
-            <Field type="checkbox" name="hobby" value="reading"></Field>
-          </Box>
-          <Box>
-            <label>upcoming</label> &nbsp;
-            <Field type="checkbox" name="hobby" value="upcoming"></Field> &nbsp;
-          </Box>
+          <Text className="hobby"> Select Hobbies</Text>
+          <Box className="check-box-wrapper">
+            <Box className="mb-3 checkbox-label">
+              <Field type="checkbox" name="hobby" value="reading" className="checkbox-input"
+              ></Field>
+              <label>reading</label>
+            </Box>
 
+            <Box className="mb-3 checkbox-label">
+              <Field type="checkbox" name="hobby" value="writing" className="checkbox-input"
+              ></Field>
+              <label>writing</label>
+            </Box>
+
+            <Box className="mb-3 checkbox-label">
+              <Field type="checkbox" name="hobby" value="cycling" className="checkbox-input"
+              ></Field>
+              <label>cycling</label>
+            </Box>
+
+            <Box className="mb-3 checkbox-label">
+              <Field type="checkbox" name="hobby" value="cooking" className="checkbox-input"
+              ></Field>
+              <label>cooking</label>
+            </Box>
+
+            <Box className="mb-3 checkbox-label">
+              <Field type="checkbox" name="hobby" value="speaking" className="checkbox-input"
+              ></Field>
+              <label className="ml-4">speaking</label>
+            </Box>
+          </Box>
           <Button
             type="submit"
             colorScheme="blue"
-            className="w-50 d-block mt-41"
+            className="w-full d-block mt-41"
           >
             add hobbies
           </Button>
