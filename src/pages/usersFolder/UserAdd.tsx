@@ -144,9 +144,6 @@ export default function UserAdd() {
               rows="6"
               className="w-100 p-2 form-field mb-3 border "
             />
-            {/* <Text className="text-color">
-              <ErrorMessage name="description" />
-            </Text> */}
           </Box>
           <Button
             type="submit"

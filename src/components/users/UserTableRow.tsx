@@ -27,7 +27,8 @@ const UserTableRow = (props: propTypes) => {
 
   const handleDelete = () => {
     dispatch(deleteUsers(user.id));
-    window.location.reload()
+    alert("delete record");
+    window.location.reload();
   };
 
   return (

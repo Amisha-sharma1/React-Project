@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "email": "poonam23@gmail.com",
-      "name": "poonam",
-      "age": "23",
-      "gender": "Male",
-      "dob": "12/04/1998",
-      "description": "hlo",
-      "hobbies": [
-        "speaking",
-        "cooking"
-      ],
-      "id": 1
-    },
-    {
       "email": "amisha23@gmail.com",
       "name": "amisha",
       "age": "45",
@@ -25,19 +12,6 @@
         "writing"
       ],
       "id": 2
-    },
-    {
-      "email": "developerniks20@gmail.com",
-      "name": "nitika",
-      "age": "23",
-      "gender": "Female",
-      "dob": "23",
-      "description": "hlo",
-      "hobbies": [
-        "reading",
-        "writing"
-      ],
-      "id": 3
     },
     {
       "email": "simran20@gmail.com",
