@@ -2,11 +2,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { RootState, useAppDispatch } from "../redux/configureStore";
+import { RootState, useAppDispatch } from "../../redux/configureStore";
 import { Text, Box, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchVerified } from "../redux/modules/login";
+import { fetchVerified } from "../../redux/modules/login";
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -33,7 +33,7 @@ const Login = () => {
       .string()
       .min(4, "too short")
       .max(8)
-      .required("Please Enter Your Password"),
+      .required("Must contain at least four number"),
   });
 
   const submit = (values: any) => {
@@ -105,18 +105,3 @@ const Login = () => {
 
 export default Login;
 
-/* <div className="wrapper">
-//   <form className="login">
-//     <p className="title">Log in</p>
-//     <input type="text" placeholder="Username" />
-//     <i className="fa fa-user"></i>
-//     <input type="password" placeholder="Password" />
-//     <i className="fa fa-key"></i>
-//     <a href="#">Forgot your password?</a>
-//     <button>
-//       <i className="spinner"></i>
-//       <span className="state">Log in</span>
-//     </button>
-//   </form>
-//   <footer><a target="blank" href="http://boudra.me/">boudra.me</a></footer>
-// </div> */

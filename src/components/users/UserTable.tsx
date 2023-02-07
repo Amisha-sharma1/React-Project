@@ -32,7 +32,7 @@ const UserTable = (props: propTypes) => {
   useEffect(() => {
     setUserData(users);
     setTotalPages(Math.ceil(users.length) / 5);
-  }, []);
+  }, [totalPages]);
 
   const handlePageChange = (newPage: any) => {
     setCurrentPage(newPage);
@@ -109,32 +109,33 @@ const UserTable = (props: propTypes) => {
           <Tr>
             <Th>Id</Th>
             {nameorder ? (
-              <Th onClick={sortNameDesc} className="pointer">
-                Name
+              <Th className="pointer">
+
+                Name  <i className="fa fa-long-arrow-up" onClick={sortNameDesc} aria-hidden="true"></i>
               </Th>
             ) : (
-              <Th onClick={sortNameAsc} className="pointer">
-                Name
+              <Th className="pointer">
+                Name <i className="fa fa-long-arrow-down" onClick={sortNameAsc} aria-hidden="true"></i>
               </Th>
             )}
 
             {ageorder ? (
-              <Th onClick={sortAgeDesc} className="pointer">
-                Age
+              <Th className="pointer">
+                Age <i className="fa fa-long-arrow-up" onClick={sortAgeDesc} aria-hidden="true"></i>
               </Th>
             ) : (
-              <Th onClick={sortAgeAsc} className="pointer">
-                Age
+              <Th className="pointer">
+                Age <i className="fa fa-long-arrow-down" onClick={sortAgeAsc} aria-hidden="true"></i>
               </Th>
             )}
 
             {emailorder ? (
-              <Th onClick={sortEmailDesc} className="pointer">
-                Email
+              <Th className="pointer">
+                Email <i className="fa fa-long-arrow-up" onClick={sortEmailDesc} aria-hidden="true"></i>
               </Th>
             ) : (
-              <Th onClick={sortEmailAsc} className="pointer">
-                Email
+              <Th className="pointer">
+                Email <i className="fa fa-long-arrow-down" onClick={sortEmailAsc} aria-hidden="true"></i>
               </Th>
             )}
             <Th>Gender</Th>
@@ -145,8 +146,8 @@ const UserTable = (props: propTypes) => {
         <Tbody>
           {usersToDisplay && usersToDisplay.length > 0
             ? usersToDisplay.map((element: any) => {
-                return <UserTableRow key={element.id} user={element} />;
-              })
+              return <UserTableRow key={element.id} user={element} />;
+            })
             : null}
         </Tbody>
       </Table>
@@ -172,7 +173,7 @@ const UserTable = (props: propTypes) => {
           {Array.from({ length: totalPages }, (_, i) => {
             return (
               <button
-                className="pages"
+                className="pages mr-15"
                 onClick={() => handlePageChange(i + 1)}
                 key={i}
                 disabled={i + 1 === currentPage}

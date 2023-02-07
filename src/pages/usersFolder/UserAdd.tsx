@@ -14,7 +14,7 @@ const MyTextArea = ({ label, ...props }: any) => {
       <label htmlFor={props.id || props.name}>{label}</label>
       <textarea className="text-area" {...field} {...props} />
       {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
+        <div className="error text-color">{meta.error}</div>
       ) : null}
     </>
   );
@@ -40,7 +40,6 @@ export default function UserAdd() {
     gender: yup.string().required("choose any one option"),
     dob: yup.string().required("Date is must"),
     description: yup.string().required("description is must"),
-    checkbox: yup.boolean().oneOf([true], "please accept termas and condition"),
   });
 
   const dispatch = useAppDispatch();
@@ -50,7 +49,9 @@ export default function UserAdd() {
     dispatch(addNew(values));
     alert("user added");
     navigate("/dashboard");
+    window.location.reload();
   };
+
   return (
     <Box className="add-form-wrapper">
       <Formik
@@ -97,7 +98,7 @@ export default function UserAdd() {
             </Text>
           </Box>
           <Box className="mb-3 d-flex">
-            <Box>
+            <Box className="mb-3 display-inline">
               <Text className="form-label mb-3 mr-60">Gender</Text>
             </Box>
             <Box className="d-flex">
@@ -108,9 +109,6 @@ export default function UserAdd() {
                 value="Male"
                 className="w-100 p-2 form-field mb-3 mr-60"
               ></Field>
-            </Box>
-            <Box className="d-flex">
-              {" "}
               <Text className="form-label mb-3 mr-60 ">Female</Text>
               <Field
                 name="gender"
@@ -118,11 +116,14 @@ export default function UserAdd() {
                 value="Female"
                 className="w-100 p-2 form-field mb-3"
               ></Field>
-              <Text className="text-color">
-                <ErrorMessage name="gender" />
-              </Text>
+
             </Box>
+            <Text className="text-color mt-10  ml-10">
+              <ErrorMessage name="gender" />
+            </Text>
+
           </Box>
+
           <Box className="mb-3">
             <Text className="form-label mb-3">Date</Text>
             <Field
@@ -143,9 +144,9 @@ export default function UserAdd() {
               rows="6"
               className="w-100 p-2 form-field mb-3 border "
             />
-            <Text className="text-color">
-              <ErrorMessage name="textarea" />
-            </Text>
+            {/* <Text className="text-color">
+              <ErrorMessage name="description" />
+            </Text> */}
           </Box>
           <Button
             type="submit"

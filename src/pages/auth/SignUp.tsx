@@ -2,8 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Box, Text, Button } from "@chakra-ui/react";
 import * as yup from "yup";
 import { useNavigate, Link } from "react-router-dom";
-import { RootState, useAppDispatch } from "../redux/configureStore";
-import { postUsers } from "../redux/modules/login";
+import { RootState, useAppDispatch } from "../../redux/configureStore";
+import { postUsers } from "../../redux/modules/login";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const SignUp = () => {
       .string()
       .min(4, "too short")
       .max(8)
-      .required("Please Enter Your Password"),
+      .required("Must contain at least four number"),
   });
 
   const dispatch = useAppDispatch();
