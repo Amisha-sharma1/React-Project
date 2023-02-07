@@ -79,6 +79,10 @@ button {
   }
 }
 
+.mr-15{
+  margin-right: 15px;
+}
+
 .add-form-wrapper {
   max-width: 900px;
   width: 100%;
@@ -685,6 +689,7 @@ input:focus {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+  height: 445px;
   box-shadow: 2px 2px 30px rgb(38, 50, 56, 30%);
 }
 .hobby{
@@ -718,8 +723,63 @@ input:focus {
 
 .checkbox-input{
   margin-top: 4px;
+  width: 17px;
+  height: 17px;
 }
 
 .w-full{
   width: 100%;
 }
+
+.mr-5{
+  margin-right: 12px;
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.text-align{
+  text-align: center;
+}
+
+.text-center{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+// pagenotfound
+.page_404{ padding:40px 0; background:#fff;
+}
+
+.page_404  img{ width:100%;}
+
+.page-not-found-img{
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+ .page-not-found-img h1{
+  font-size: 80px;
+  font-weight: 500;
+  margin-bottom: 15px;
+ }
+.home-button{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #2583db;
+    margin: 20px 0;
+    border: 1px solid #2583db;
+    display: inline-block;
+    border-radius: 15px;
+}
+	

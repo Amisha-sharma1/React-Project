@@ -32,7 +32,7 @@ export default function UserEdit() {
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
@@ -66,11 +66,14 @@ export default function UserEdit() {
   });
   const submit = (values: any) => {
     values.hobbies = hobby;
-    console.log(values, "79841");
-    
-    dispatch(editUsers({ values, id }));
-    alert("data update");
-    navigate("/dashboard");
+    if (values.hobbies.length === 0) {
+      return alert("Please Select atleast one hobby")
+    }
+    else {
+      dispatch(editUsers({ values, id }));
+      alert("data update");
+      navigate("/dashboard");
+    }
   };
 
   return (
@@ -107,6 +110,7 @@ export default function UserEdit() {
             <Field
               name="email"
               type="email"
+              readOnly
               placeholder="Enter Your Email"
               className="w-100 p-2 form-field"
             ></Field>
@@ -114,26 +118,29 @@ export default function UserEdit() {
               <ErrorMessage name="email" />
             </Text>
           </Box>
-          <Box className="mb-3 display-inline">
-            <Text className="form-label mb-3 mr-60">Gender</Text>
-            <Text className="form-label mb-3 mr-60">Male</Text>
-            <Field
-              name="gender"
-              type="radio"
-              placeholder="Enter Your Password"
-              value="Male"
-              className="w-100 p-2 form-field mb-3 mr-60"
-            ></Field>
-            <Text className="form-label mb-3 mr-60">Female</Text>
-            <Field
-              name="gender"
-              type="radio"
-              value="Female"
-              className="w-100 p-2 form-field mb-3"
-            ></Field>
-            <Text className="text-color">
-              <ErrorMessage name="gender" />
-            </Text>
+          <Box className="mb-3 d-flex">
+            <Box className="mb-3 display-inline">
+              <Text className="form-label mb-3 mr-60">Gender</Text>
+            </Box>
+            <Box className="d-flex">
+              <Text className="form-label mb-3 mr-60 ">Male</Text>
+              <Field
+                name="gender"
+                type="radio"
+                value="Male"
+                className="w-100 p-2 form-field mb-3 mr-60"
+              ></Field>
+              <Text className="form-label mb-3 mr-60 ">Female</Text>
+              <Field
+                name="gender"
+                type="radio"
+                value="Female"
+                className="w-100 p-2 form-field mb-3"
+              ></Field>
+              <Text className="text-color">
+                <ErrorMessage name="gender" />
+              </Text>
+            </Box>
           </Box>
           <Box className="mb-3">
             <Text className="form-label mb-3 ">Textarea</Text>
@@ -148,10 +155,12 @@ export default function UserEdit() {
             </Text>
             <Button colorScheme="blue" variant="link">
               <Link to={`/dashboard/hobbies/${valid.id}`}>
-                <Text>Hobbies</Text>{" "}
+                <Text>Hobbies: </Text>
               </Link>
-              <Text>Selected Hobbies: {hobby}</Text>
             </Button>
+            <Text>{hobby?.map((element: string, index: number) => {
+              return (<Text key={index} className="mr-5">{element}</Text>)
+            })}</Text>
           </Box>
 
           <Button type="submit" colorScheme="blue" className="w-100">

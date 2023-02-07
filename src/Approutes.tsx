@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Dashboard } from "./pages";
+import { Dashboard } from "./pages/auth";
 import Home from "./pages/Home";
-import { UserAdd, UserEdit, UserTable, UserView, } from "./pages/UsersF";
-import UserHobbies from "./pages/UsersF/UserHobbies";
-import { SignUp, Login } from "./pages";
+import { UserAdd, UserEdit, UserTable, UserView, } from "./pages/usersFolder";
+import UserHobbies from "./pages/usersFolder/UserHobbies";
+import { SignUp, Login,PageNotFound } from "./pages/auth";
 import { RootState, useAppDispatch } from "./redux/configureStore";
 import { fetchUsers } from "./redux/modules/users";
 import { useSelector } from "react-redux";
@@ -28,6 +28,7 @@ const Approutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<PageNotFound/>} />
 
       </Route>
       <Route path="/dashboard" element={<Dashboard />}>

@@ -8,11 +8,140 @@
       "dob": "12/04/1998",
       "description": "hlo",
       "hobbies": [
-        "writing",
-        "reading",
-        "upcoming"
+        "speaking",
+        "cooking"
       ],
       "id": 1
+    },
+    {
+      "email": "amisha23@gmail.com",
+      "name": "amisha",
+      "age": "45",
+      "gender": "Female",
+      "dob": "23",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 2
+    },
+    {
+      "email": "developerniks20@gmail.com",
+      "name": "nitika",
+      "age": "23",
+      "gender": "Female",
+      "dob": "23",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 3
+    },
+    {
+      "email": "simran20@gmail.com",
+      "name": "simran",
+      "age": "28",
+      "gender": "Female",
+      "dob": "12",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 4
+    },
+    {
+      "email": "mohit50@gmail.com",
+      "name": "mohit",
+      "age": "22",
+      "gender": "male",
+      "dob": "12",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 5
+    },
+    {
+      "email": "monika87@gmail.com",
+      "name": "monika",
+      "age": "22",
+      "gender": "female",
+      "dob": "12",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 6
+    },
+    {
+      "email": "sumit50@gmail.com",
+      "name": "sumit",
+      "age": "27",
+      "gender": "male",
+      "dob": "17",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 7
+    },
+    {
+      "email": "rishu70@gmail.com",
+      "name": "rishu",
+      "age": "21",
+      "gender": "female",
+      "dob": "17",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 8
+    },
+    {
+      "email": "abhi78@gmail.com",
+      "name": "abhi",
+      "age": "22",
+      "gender": "male",
+      "dob": "18",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 9
+    },
+    {
+      "email": "arsh90@gmail.com",
+      "name": "arsh",
+      "age": "28",
+      "gender": "male",
+      "dob": "21",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 10
+    },
+    {
+      "email": "admin@gmail.com",
+      "name": "amisha",
+      "age": "23",
+      "gender": "Female",
+      "dob": "32",
+      "description": "hlo",
+      "hobbies": [
+        "reading",
+        "writing"
+      ],
+      "id": 11
     }
   ],
   "userslogin": [
